@@ -5,7 +5,7 @@ class ConfigurationManager
   def self.new_manager(environment=ENV['RAILS_ENV'], yaml_file=File.join(RAILS_ROOT,"/config/configuration_manager.yml"))
     yaml_file = File.expand_path(yaml_file)
     if File.exist?(yaml_file)
-      ConfigurationManagerHash.new_from_hash(YAML.load(File.read(yaml_file))[environment])
+      ConfigurationManagerHash.new_from_hash(YAML.load(ERB.new(File.read(yaml_file)).result)[environment])
     else
       ConfigurationManagerHash.new
     end
