@@ -4,6 +4,9 @@ ConfigurationManager
 Allows you to easily manage your app's configuration by using a YAML file to
 store the configuration while accessing it from a class-like interface.
 
+Inspiration taken from Peepcode's Rails Code Review:
+http://peepcode.com/products/draft-rails-code-review-pdf
+
 Example
 =======
 
