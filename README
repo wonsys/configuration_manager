@@ -7,10 +7,15 @@ store the configuration while accessing it from a class-like interface.
 Inspiration taken from Peepcode's Rails Code Review:
 http://peepcode.com/products/draft-rails-code-review-pdf
 
+Install the plugin:
+  script/plugin install http://wonsys.googlecode.com/svn/plugins/configuration_manager/
+
+Bug tracker: http://wonsysos.16bugs.com/
+
 Example
 =======
 
-config/configuration_manager.yml
+File: config/configuration_manager.yml
 
 everyone: &every_env
   key1: value1
