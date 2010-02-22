@@ -1,9 +1,9 @@
 class ConfigurationManagerHash < Hash
   def method_missing(method, *args)
-    if self.keys.include?(method.to_s)
-      result = self[method.to_s]
+    if (actual_key = method.to_s && self.keys.include?(actual_key)) || (actual_key = method.to_s.to_sym && self.keys.include?(actual_key))
+      result = self[actual_key]
       if result.class == Hash
-        result = self[method.to_s] = ConfigurationManagerHash.new_from_hash(result)
+        result = self[actual_key] = ConfigurationManagerHash.new_from_hash(result)
       end
       return result
     else
